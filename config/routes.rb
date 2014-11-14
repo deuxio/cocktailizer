@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :doses, only:[:new, :create, :destroy]
   end
 
+
   resources :ingredients
 
   # The priority is based upon order of creation: first created -> highest priority.

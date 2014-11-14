@@ -17,3 +17,36 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+
+.page-header > h1 {
+  display: inline-block;
+}
+
+.ingredients h3, .cocktail-overview > h2 {
+ display: inline-block;
+}
+
+.remove-ingredient, .edit-cocktail {
+  padding-left: 20px;
+}
+
+.add-new-dose, .add-new-ingredient {
+  float:right;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.edit-cocktail-name {
+  margin: 10px;
+}
+
+.page-header {
+  margin: 0;
+}
+
+.back {
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #eeeeee;
+}
