@@ -5,6 +5,7 @@
 
     <p id="notice"><%= notice %></p>
 
+    <%= image_tag @cocktail.photo.url(:banner) %>
     <h1><%= @cocktail.name %></h1>
     <div class="edit">
       <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_cocktail_path(@cocktail) %>
