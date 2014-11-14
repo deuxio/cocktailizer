@@ -11,11 +11,11 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.text_field :amount %> cl. of <%= f.select :ingredient_id, @ingredients.map {|ingredient| [ ingredient.name, ingredient.id ]} %>
+  <div class="field form-group">
+    <%= f.text_field :amount %> cl. of <%= f.select :ingredient_id, @ingredients.map {|ingredient| [ ingredient.name, ingredient.id ]}, class: "form-control"  %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-info' %>
   </div>
 <% end %>
 

@@ -7,10 +7,6 @@
       <span class="edit-cocktail-name">
         <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_cocktail_path(@cocktail) %>
       </span>
-
-      <span class="add-new-dose">
-        <%= link_to '<i class="fa fa-plus-circle"></i> Add Dose'.html_safe, new_cocktail_dose_path(@cocktail), class: 'btn btn-default' %>
-      </span>
     </div>
     <%= image_tag @cocktail.photo.url(:banner) %>
     </div>
@@ -20,8 +16,7 @@
     <div class="col-xs-5 col-xs-offset-2">
       <div class="description">
         <h2>Recette</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet nam eos repellat distinctio dolor molestiae blanditiis labore, corporis porro, odio facere omnis maxime laborum consequuntur. Asperiores distinctio enim, ullam quam.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate autem vitae nostrum architecto qui, sit illo, aliquid, enim culpa veritatis placeat, laborum. Labore, corporis nobis velit maiores asperiores voluptatum autem!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus quis, illo facere voluptas error consectetur deserunt perferendis accusantium blanditiis nam sapiente explicabo saepe aut a ipsum non, quasi incidunt minima!</p>
+        <p><%= @cocktail.description %></p>
       </div>
     </div>
 
@@ -32,6 +27,9 @@
         <p><%= dose.amount %> de <%= dose.ingredient.name %> <%= link_to '<i class="fa fa-times"></i>'.html_safe, cocktail_dose_path(@cocktail, dose), method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
         </p>
+        <span class="add-new-dose">
+          <%= link_to '<i class="fa fa-plus-circle"></i> Add Dose'.html_safe, new_cocktail_dose_path(@cocktail), class: 'btn btn-default' %>
+        </span>
       </div>
     </div>
 
