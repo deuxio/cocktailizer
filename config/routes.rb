@@ -1,13 +1,8 @@
 Rails.application.routes.draw do
-  get 'doses/new'
 
-  get 'doses/create'
-
-  get 'doses/edit'
-
-  get 'doses/update'
-
-  resources :cocktails
+  resources :cocktails do
+    resources :doses, only:[:new, :create, :destroy]
+  end
 
   resources :ingredients
 

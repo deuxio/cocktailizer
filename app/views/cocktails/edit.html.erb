@@ -1,6 +1,16 @@
-<h1>Editing cocktail</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8">
 
-<%= render 'form' %>
+    <h1>Edit <%= @cocktail.name %></h1>
 
-<%= link_to 'Show', @cocktail %> |
-<%= link_to 'Back', cocktails_path %>
+    <%= render 'form' %>
+
+    <%= link_to 'Show', @cocktail %>
+
+      <div class="back">
+      <%= link_to '<i class="fa fa-chevron-left"></i> Back'.html_safe, cocktails_path %>
+      </div>
+    </div>
+  </div>
+</div>

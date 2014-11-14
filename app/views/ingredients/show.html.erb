@@ -1,9 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8">
+      <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @ingredient.name %>
-</p>
+      <p>
+        <strong>Name:</strong>
+        <%= @ingredient.name %>
+      </p>
 
-<%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
-<%= link_to 'Back', ingredients_path %>
+      <%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
+      <%= link_to 'Back', ingredients_path %>
+    </div>
+  </div>
+</div>

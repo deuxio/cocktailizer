@@ -1,16 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8">
 
-<p>
-  <strong>Name:</strong>
-  <%= @cocktail.name %>
-</p>
 
-<p>
-  <strong>Recettes:</strong>
-  <% @cocktail.doses.each do |dose| %>
-  <p><%= dose.amount %> de <%= dose.ingredient.name %><p>
-  <% end %>
-</p>
+    <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_cocktail_path(@cocktail) %> |
-<%= link_to 'Back', cocktails_path %>
+    <h1><%= @cocktail.name %></h1>
+    <div class="edit">
+      <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_cocktail_path(@cocktail) %>
+    </div>
+
+    <p>
+      <% @cocktail.doses.each do |dose| %>
+      <p><%= dose.amount %> de <%= dose.ingredient.name %> <%= link_to '<i class="fa fa-times"></i>'.html_safe, cocktail_dose_path(@cocktail, dose), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </p>
+
+    <%= link_to '<i class="fa fa-plus-circle"></i> Add Dose'.html_safe, new_cocktail_dose_path(@cocktail) %>
+
+      <div class="back">
+      <%= link_to '<i class="fa fa-chevron-left"></i> Back'.html_safe, cocktails_path %>
+      </div>
+    </div>
+  </div>
+</div>
